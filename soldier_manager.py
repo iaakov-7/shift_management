@@ -11,3 +11,10 @@ def add_soldier(soldier_id,name):
     
     new_soldier = {"id":soldier_id, "name":name, "duties":[] }
     all_soldiers.append(new_soldier)
+
+def remove_soldier(soldier_id):
+    soldier_dict = find_soldier_by_id(soldier_id)
+    if not soldier_dict:
+        raise KeyError(f"Soldier with ID: {soldier_id} not exists in the system")
+    
+    all_soldiers.remove(soldier_dict)
