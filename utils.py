@@ -33,7 +33,11 @@ def is_valid_name(name):
 
 def is_valid_day(day):
     valid_days = ["sunday", "monday", "tuesday", "wednesday", "thursday"]
-    return day in valid_days    
+    return day in valid_days
+
+def is_valid_status(status):
+    valid_statuses = ["pending","completed","missed"]
+    return status in valid_statuses
 
 if __name__ == "__main__":
     pass            
