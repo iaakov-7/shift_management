@@ -18,3 +18,10 @@ def remove_soldier(soldier_id):
         raise KeyError(f"Soldier with ID: {soldier_id} not exists in the system")
     
     all_soldiers.remove(soldier_dict)
+
+def view_all_sildiers():
+    if not all_soldiers:
+        print("There are no soldires in the system")
+    else:
+        for soldier in all_soldiers:
+            print(soldier)    
