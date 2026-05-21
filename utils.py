@@ -19,12 +19,21 @@ def find_soldier_by_id(soldier_id):
             return soldier
     return None    
 
+def find_duty_by_name(duties,duty_name):
+    for duty in duties:
+        if duty["name"] == duty_name:
+            return duty
+    return None
+
 def is_valid_name(name):
     name = name.strip()        
     if len(name) < 2:
         return False
     return True
-    
+
+def is_valid_day(day):
+    valid_days = ["sunday", "monday", "tuesday", "wednesday", "thursday"]
+    return day in valid_days    
 
 if __name__ == "__main__":
-    is_valid_name("      yyy jjj")             
+    pass            

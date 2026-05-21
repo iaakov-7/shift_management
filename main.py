@@ -1,7 +1,7 @@
 from utils import get_valid_soldier_id
 from soldier_manager import add_soldier, remove_soldier, view_all_sildiers
 from menus import show_main_menu, show_management_soldiers_menu, show_management_duteis_menu
-
+from duty_manager import add_duty_to_soldier
 def main():
     no_exit_main = True
     while no_exit_main:
@@ -37,7 +37,7 @@ def handle_duties_menu():
         user_choice = get_user_choice(3)
         match user_choice:
             case "1":
-                pass
+                handle_add_duty()
             case "2":
                 pass
             case "3":
@@ -70,5 +70,14 @@ def handle_remove_soldier():
     except KeyError as e:
         print(f"Error: {e}")    
 
+def handle_add_duty():
+    soldier_id = get_valid_soldier_id()
+    duty_name = input("Enter duty name: ")  
+    day = input("Enter day: ")
+    try:
+        add_duty_to_soldier(soldier_id,duty_name,day)
+        print("Duty added successfully")
+    except (ValueError,KeyError) as e:
+        print(f"Error: {e}")    
 
 main()
