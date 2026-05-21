@@ -1,6 +1,6 @@
 from utils import get_valid_soldier_id
 from soldier_manager import add_soldier, remove_soldier, view_all_sildiers
-from menus import show_main_menu, show_management_soldiers_menu
+from menus import show_main_menu, show_management_soldiers_menu, show_management_duteis_menu
 
 def main():
     no_exit_main = True
@@ -10,6 +10,8 @@ def main():
         match user_choice:
             case "1":
                 handle_soldiers_menu()
+            case "2":
+                handle_duties_menu()    
             case "0":
                 no_exit_main = False
 
@@ -27,6 +29,21 @@ def handle_soldiers_menu():
                 view_all_sildiers()
             case "0":
                 no_exit_managment_soldiers = False
+
+def handle_duties_menu():
+    no_exit_managment_duties = True
+    while no_exit_managment_duties:
+        show_management_duteis_menu()
+        user_choice = get_user_choice(3)
+        match user_choice:
+            case "1":
+                pass
+            case "2":
+                pass
+            case "3":
+                pass
+            case "0":
+                no_exit_managment_duties = False
 
 def get_user_choice(num_options):
     options = [str(num) for num in range(num_options+1)]
