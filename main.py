@@ -1,6 +1,6 @@
 from utils import get_valid_soldier_id
 from soldier_manager import add_soldier, remove_soldier, view_all_sildiers
-
+from menus import show_main_menu, show_management_soldiers_menu
 
 def main():
     no_exit_main = True
@@ -12,18 +12,6 @@ def main():
                 handle_soldiers_menu()
             case "0":
                 no_exit_main = False
-
-def show_main_menu():
-    print(" Welcome to 'Shift Management' System ")
-    print("1. Manage Soldiers (Add/Remove/View)")
-    print("2. Manage Duteis (Add/Update/View)")
-    print("0. Exit")
-
-def show_management_soldiers_menu():
-    print("1. Add soldier")
-    print("2. Remove soldier")
-    print("3. View all soldiers")
-    print("0. Exit")
 
 def handle_soldiers_menu():
     no_exit_managment_soldiers = True
