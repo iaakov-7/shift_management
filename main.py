@@ -1,3 +1,5 @@
+#https://github.com/iaakov-7/shift_management.git
+
 from utils import get_valid_soldier_id
 from soldier_manager import add_soldier, remove_soldier, view_all_sildiers
 from menus import show_main_menu, show_management_soldiers_menu, show_management_duteis_menu
