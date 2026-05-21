@@ -13,5 +13,5 @@ def show_management_soldiers_menu():
 def show_management_duteis_menu():
     print("1. Add duty to soldier")
     print("2. Update_duty_status")
-    print("3. View dutie's soldier")
+    print("3. View soldier's duties")
     print("0. Exit")

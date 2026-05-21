@@ -22,3 +22,13 @@ def update_duty_status(soldier_id, duty_name, new_status):
     if not is_valid_status(new_status):
         raise ValueError("Status should be pending/completed/missed")
     soldier_duty["status"] = new_status
+
+def view_soldier_duties(soldier_id):
+    soldier_dict = find_soldier_by_id(soldier_id)
+    if not soldier_dict:
+        raise KeyError(f"Soldier with ID: {soldier_id} not exists in the system")
+    if not soldier_dict["duties"]:
+        print("Soldier has no duties")
+    else:
+        for duty in soldier_dict["duties"]:
+            print(duty)        

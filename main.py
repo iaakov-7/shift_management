@@ -1,7 +1,7 @@
 from utils import get_valid_soldier_id
 from soldier_manager import add_soldier, remove_soldier, view_all_sildiers
 from menus import show_main_menu, show_management_soldiers_menu, show_management_duteis_menu
-from duty_manager import add_duty_to_soldier,update_duty_status
+from duty_manager import add_duty_to_soldier,update_duty_status, view_soldier_duties
 def main():
     no_exit_main = True
     while no_exit_main:
@@ -41,7 +41,7 @@ def handle_duties_menu():
             case "2":
                 handle_update_duty_status()
             case "3":
-                pass
+                handle_view_soldier_duties()
             case "0":
                 no_exit_managment_duties = False
 
@@ -89,5 +89,12 @@ def handle_update_duty_status():
        print("Status updated succefully")
    except (KeyError,ValueError) as e:
        print(f"Error: {e}")
+
+def handle_view_soldier_duties():
+    soldier_id = get_valid_soldier_id()
+    try:
+        view_soldier_duties(soldier_id)
+    except KeyError as e:
+        print(f"Error: {e}")    
 
 main()
