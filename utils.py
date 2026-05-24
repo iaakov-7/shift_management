@@ -27,7 +27,7 @@ def find_duty_by_name(duties,duty_name):
 
 def is_valid_name(name):
     name = name.strip()        
-    if len(name) < 2:
+    if len(name) < 2 or not name.isalpha():
         return False
     return True
 

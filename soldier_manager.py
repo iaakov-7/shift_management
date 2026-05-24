@@ -7,7 +7,7 @@ def add_soldier(soldier_id,name):
         raise ValueError(f"Soldier with ID: {soldier_id} already exists in the system") 
     
     if not is_valid_name(name):
-        raise ValueError(f"Soldier name cannot be shorter than 2 letters")
+        raise ValueError(f"Soldier name must be letters and at least 2 letters long")
     
     new_soldier = {"id":soldier_id, "name":name, "duties":[] }
     all_soldiers.append(new_soldier)
